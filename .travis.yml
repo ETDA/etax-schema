@@ -1,10 +1,9 @@
 language: java
-script:
-- xjc schema/XMLSchemaV2
-- xmllint --noout --schema schema/XMLSchemaV2/ETDA/data/standard/TaxInvoice_CrossIndustryInvoice_2p0.xsd xml/valid.xml
 install:
 - sudo apt-get install libxml2-utils
 script:
+- xjc schema/XMLSchemaV2
+- xmllint --noout --schema schema/XMLSchemaV2/ETDA/data/standard/TaxInvoice_CrossIndustryInvoice_2p0.xsd xml/valid.xml
 - zip -r schema-$TRAVIS_BRANCH.zip schema/XMLSchemaV2
 deploy:
   provider: releases
