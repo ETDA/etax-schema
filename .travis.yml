@@ -1,4 +1,6 @@
 language: java
+install:
+- sudo apt-get install
 script:
 - xjc schema/XMLSchemaV2
 - zip -r schema-$TRAVIS_BRANCH.zip schema/XMLSchemaV2
@@ -11,3 +13,4 @@ deploy:
   on:
     repo: ETDA/etax-schema
     tags: true
+
