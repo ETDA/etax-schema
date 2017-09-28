@@ -11,3 +11,4 @@ deploy:
   on:
     repo: ETDA/etax-schema
     tags: true
+
